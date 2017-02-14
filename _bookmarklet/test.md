@@ -1,0 +1,4 @@
+---
+layout bookmarket
+---
+alert("hello");
