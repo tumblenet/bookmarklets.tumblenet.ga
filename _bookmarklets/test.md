@@ -1,4 +1,4 @@
 ---
-layout bookmarket
+layout: bookmarket
 ---
 alert("hello");
