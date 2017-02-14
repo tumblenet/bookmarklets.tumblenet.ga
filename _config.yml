@@ -1,0 +1,4 @@
+collections:
+ bookmarklet:
+  output: true
+  permalink: /:categories/:title.js
