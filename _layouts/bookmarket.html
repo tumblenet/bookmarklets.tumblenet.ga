@@ -20,7 +20,8 @@ var v = "{{ page.jquery.ver | default: "1.3.2" }}";
 	{% endif %}
 	function initMyBookmarklet() {
 		(window.myBookmarklet = function() {
-			function getSelText() {
+			{% if page.selection %}
+			function {{ page.selection }}() {
 				var s = '';
 				if (window.getSelection) {
 					s = window.getSelection();
@@ -31,6 +32,7 @@ var v = "{{ page.jquery.ver | default: "1.3.2" }}";
 				}
 				return s;
 			}
+			{% endif %}
 			{{ content }}
 		})();
 	}
