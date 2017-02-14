@@ -2,5 +2,5 @@
 layout: null
 ---
 {% for item in site.bookmarklets %}
-<a href="{{ item.url }}">{{ item.title }}</a>
+<a href="javascript:(function(){if(window.myBookmarklet!==undefined){myBookmarklet();}else{document.body.appendChild(document.createElement('script')).src='{{ item.url }}?';}})();">{{ item.title }}</a>
 {% endfor %}
