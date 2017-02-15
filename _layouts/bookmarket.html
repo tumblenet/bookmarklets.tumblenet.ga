@@ -9,18 +9,18 @@ var v = "{{ page.jquery.ver | default: "1.3.2" }}";
 		script.onload = script.onreadystatechange = function(){
 			if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
 				done = true;
-				init{{ item.title }}();
+				init{{ page.title }}();
 			}
 		};
-		document.getElementsByTagName("head")[0].appendChild(script);
+		document.getElementsByTagName("head"[0].appendChild(script);
 	} else {
-		init{{ item.title }}();
+		init{{ page.title }}();
 	}
 	{% else %}
-		init{{ item.title }}();					       
+		init{{ page.title }}();					       
 	{% endif %}
-	function init{{ item.title }}() {
-		(window.{{ item.title }} = function() {
+	function init{{ page.title }}() {
+		(window.{{ page.title }} = function() {
 			{% if page.selection %}
 			function {{ page.selection }}() {
 				var s = '';
