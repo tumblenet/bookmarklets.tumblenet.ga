@@ -1,4 +1,5 @@
 url: http://bookmarklets.tumblenet.me
+version: 12
 collections:
  bookmarklets:
   output: true
