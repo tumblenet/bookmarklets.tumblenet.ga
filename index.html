@@ -3,11 +3,11 @@ layout: null
 ---
 {% for item in site.bookmarklets %}
 <a href="javascript:(function(){
-         if(window.myBookmarklet!==undefined){
-         myBookmarklet();
+         if(window.{{ item.title }}!==undefined){
+         {{ item.title }}();
          }else{
-         document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}/testUpdate.js';
-         var version = '{{ site.version }}';
+         //document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}/testUpdate.js';
+         //var version = '{{ site.version }}';
          document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}{{ item.url }}';
          }
          })();">{{ item.title }}</a>
