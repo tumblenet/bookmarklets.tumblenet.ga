@@ -1,5 +1,5 @@
 ---
-layout: bookmarklet
+permalink: testUpdate.js
 ---
 function Updated(var version) {
 var updatedVer = "{{ site.version }}";
