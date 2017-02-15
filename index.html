@@ -1,8 +1,9 @@
 ---
 layout: null
 ---
+<ul>
 {% for item in site.bookmarklets %}
-<a href="javascript:(function(){
+<li><a href="javascript:(function(){
          if(window.{{ item.title }}!==undefined){
          {{ item.title }}();
          }else{
@@ -11,4 +12,6 @@ layout: null
          document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}{{ item.url }}';
          }
          })();">{{ item.title }}</a>
+         <p>{{ item.description }}</p></li>
 {% endfor %}
+         </ul>
