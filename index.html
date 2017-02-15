@@ -6,9 +6,9 @@ layout: null
          if(window.myBookmarklet!==undefined){
          myBookmarklet();
          }else{
-         document.body.appendChild(document.createElement('script')).src=location.protocol+'{{ site.url | remove_first: 'http:' }}/testUpdate.js';
+         document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}/testUpdate.js';
          var version = '{{ site.version }}';
-         document.body.appendChild(document.createElement('script')).src=location.protocol+'{{ site.url | remove_first: 'http:' }}{{ item.url }}';
+         document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}{{ item.url }}';
          }
          })();">{{ item.title }}</a>
 {% endfor %}
