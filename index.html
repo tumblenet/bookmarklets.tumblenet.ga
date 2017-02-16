@@ -12,7 +12,11 @@ layout: default
                              if (window.{{ item.title }}!==undefined){
                               {{ item.title }}();
                              } else { 
-                             var version = '{{ site.version }}';
+                              var meta = document.createElement('meta');
+                              meta.httpEquiv = 'Content-Security-Policy';
+                              meta.content = 'upgrade-insecure-requests';
+                              document.getElementsByTagName('head')[0].appendChild(meta);
+                              var version = '{{ site.version }}';
                               document.body.appendChild(document.createElement('script')).src='//tumblenet.github.io/bookmarklets.tumblenet.me/testUpdate.js';
                               document.body.appendChild(document.createElement('script')).src='//tumblenet.github.io/bookmarklets.tumblenet.me{{ item.url }}';
                              }
