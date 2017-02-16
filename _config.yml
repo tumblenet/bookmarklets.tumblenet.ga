@@ -16,7 +16,7 @@
 title: Tumble Network
 description: >
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tumblenet.github.io/bookmarklets" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tumblenet.github.io/bookmarklets.tumblenet.me" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: pretty
 production: true
 favicon: favicon.gif
