@@ -11,14 +11,14 @@ layout: default
               </div>
               <div class="mdl-card__actions">
                 <a href="javascript:(function(){
-           if(window.{{ item.title }}!==undefined){
-           {{ item.title }}();
-           }else{
-           //document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}/testUpdate.js';
-           //var version = '{{ site.version }}';
-           document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}{{ item.url }}';
-           }
-           })();" class="mdl-button mdl-button--colored mdl-button--raised">{{ item.title }}</a>
+         if(window.{{ item.title }}!==undefined){
+         {{ item.title }}();
+         }else{
+         //document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}/testUpdate.js';
+         //var version = '{{ site.version }}';
+         document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}{{ item.url }}';
+         }
+         })();" class="mdl-button mdl-button--colored mdl-button--raised">{{ item.title }}</a>
               </div>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
