@@ -13,9 +13,8 @@ layout: default
                               {{ item.title }}();
                              } else { 
                              var version = '{{ site.version }}';
-                              document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}/testUpdate.js';
-                              document.body.appendChild(document.createElement('script')).src='//tumblenet.github.io/bookmarklets.tumblenet.me/{{ item.url }}';
-                              document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'http:' }}{{ item.url }}';
+                              document.body.appendChild(document.createElement('script')).src='//tumblenet.github.io/bookmarklets.tumblenet.me/testUpdate.js';
+                              document.body.appendChild(document.createElement('script')).src='//tumblenet.github.io/bookmarklets.tumblenet.me{{ item.url }}';
                              }
                           })();" class="mdl-button mdl-button--colored mdl-button--raised">{{ item.title }}</a></p>
               </div>
