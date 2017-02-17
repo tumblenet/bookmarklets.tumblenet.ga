@@ -6,7 +6,12 @@ jquery: yes
 var $tnOverlay = $('<div id="tumblenet-bookmarklet-overlay"></div>');
 if(!$('#tumblenet-bookmarklet-overlay').length){
     // append it to the body
+var $tnTitle = $('<h1>Coming Soon</h1>');
+
+
+
     $('body').append($tnOverlay);
+$tnOverlay.append($tnTitle);
 
     // style it:
     $tnOverlay.css({
@@ -18,5 +23,11 @@ if(!$('#tumblenet-bookmarklet-overlay').length){
         backgroundColor: 'red',
         opacity: '0.5',
         zIndex: '10000'
+    });
+$tnTitle.css({
+        position: 'fixed',
+        top: '100',
+        left: '100',
+        zIndex: 'inherit'
     });
 }
