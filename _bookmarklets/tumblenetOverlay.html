@@ -4,7 +4,7 @@ jquery: yes
 ---
 // create the element
 var $tnOverlay = $('<div id="tumblenet-bookmarklet-overlay"></div>');
-if(!$tnOverlay.length){
+if(!$('#tumblenet-bookmarklet-overlay').length){
     // append it to the body
     $('body').append($tnOverlay);
 
