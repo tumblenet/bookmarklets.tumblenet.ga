@@ -3,7 +3,7 @@
   permalink: "/testUpdate.js"
 ---
 (window.testUpdate = function(version, callback) {
-var updatedVer = "{{ site.version }}";
+var updatedVer = "{{ site.version | default: 0 }}";
 var tmp = false;
 if(version != updatedVer) {
 tmp = false
