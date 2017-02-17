@@ -20,6 +20,9 @@ layout: default
                               testUpdate({{ site.version }}, function(upToDate) {
                                   if (upToDate){
                                   document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
+                                  } else {
+                                  alert('This bookmarklet is out of date');
+                                   window.location.replace('http://bookmarlets.tumblenet.me');
                                   }
                                   });
                               
