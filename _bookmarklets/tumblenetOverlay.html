@@ -3,10 +3,11 @@ layout: bookmarklet
 jquery: yes
 ---
 // create the element:
-var $overlay = $('<div id="tumblenet-bookmarklet-overlay"></div>');
+alert("face");
+var $tn = $('<div id="tumblenet-bookmarklet-overlay"></div>');
 if(!$('#tumblenet-bookmarklet-overlay').length){
     // append it to the body
-    $('body').append($overlay);
+    $('body').append($tn);
     alert("overlay placed");
 
     // style it:
@@ -16,7 +17,7 @@ if(!$('#tumblenet-bookmarklet-overlay').length){
         left: '0',
         width: '100%',
         height: '100%',
-        backgroundColor: '#000',
+        backgroundColor: 'red',
         opacity: '0.5',
         zIndex: '10000'
     });
