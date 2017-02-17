@@ -10,21 +10,21 @@ layout: default
                 {{ item.description }}
                 <p>
                     <a href="javascript:(function(){
-                             if (window.{{ item.title }}!==undefined){
-                                {{ item.title }}();
-                             } else {
-                             document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}/testUpdate.js';
-                             testUpdate({{ site.version | default: 0 }}, function(upToDate) {
-                                 if (upToDate){
-                                    document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
-                                 } else {
-                                     alert('This bookmarklet is out of date');
-                                     var win = window.open('http://bookmarlets.tumblenet.me', '_blank');
-                                     win.focus();
-                                 }
-                             });
-                             }
-                             })();" class="mdl-button mdl-button--colored mdl-button--raised">{{ item.title }}</a>
+if (window.{{ item.title }}!==undefined){
+{{ item.title }}();
+} else {
+document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}/testUpdate.js';
+testUpdate({{ site.version | default: 0 }}, function(upToDate) {
+if (upToDate){
+document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
+} else {
+alert('This bookmarklet is out of date');
+var win = window.open('http://bookmarlets.tumblenet.me', '_blank');
+win.focus();
+}
+});
+}
+})();" class="mdl-button mdl-button--colored mdl-button--raised">{{ item.title }}</a>
                 </p>
             </div>
             <div class="mdl-card__actions">
