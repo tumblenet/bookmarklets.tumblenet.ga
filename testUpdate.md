@@ -1,6 +1,6 @@
 ---
   layout: null
-permalink: /testUpdate.js
+  permalink: "/testUpdate.js"
 ---
 var updatedVer = "{{ site.version }}";
 if(version != updatedVer) {
