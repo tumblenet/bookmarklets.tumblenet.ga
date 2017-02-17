@@ -2,10 +2,13 @@
   layout: null
   permalink: "/testUpdate.js"
 ---
-(window.testUpdate = function(version) {
+(window.testUpdate = function(version, callback) {
 var updatedVer = "{{ site.version }}";
+var tmp = false;
 if(version != updatedVer) {
-alert("This bookmarklet is old please update");
-  window.location.replace("http://bookmarlets.tumblenet.me");
+tmp = false
+} else {
+tmp = true;
 }
+callback(tmp);
 })();
