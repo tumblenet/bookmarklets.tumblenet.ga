@@ -6,7 +6,7 @@ jquery: yes
 var overlay = $('<div id="tumblenet-bookmarklet-overlay"></div>');
 if(!overlay.length){
     // append it to the body
-    $('body').append($tn);
+    $('body').append(overlay);
 
     // style it:
     overlay.css({
@@ -16,7 +16,7 @@ if(!overlay.length){
         width: '100%',
         height: '100%',
         backgroundColor: 'red',
-        opacity: '0.5',
+        opacity: '1',
         zIndex: '10000'
     });
 }
