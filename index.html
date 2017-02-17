@@ -31,10 +31,10 @@ win.focus();
 
             </div>
         </div>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn{{item.title | sligify }}">
             <i class="material-icons">more_vert</i>
         </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="{{item.title | sligify }}">
             <li class="mdl-menu__item" disabled>Under Construction</li>
         </ul>
     </section>
