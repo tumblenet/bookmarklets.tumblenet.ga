@@ -4,7 +4,7 @@ jquery: yes
 ---
 // create the element:
 var $e = $('<div id="tumblenet-bookmarklet-overlay"></div>');
-
+if(!$e.length){
 // append it to the body:
 $('body').append($e);
 
@@ -19,3 +19,4 @@ $e.css({
     opacity: '0.5',
     zIndex: '10000'
 });
+}
