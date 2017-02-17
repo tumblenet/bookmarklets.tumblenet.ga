@@ -3,14 +3,14 @@ layout: bookmarklet
 jquery: yes
 ---
 // create the element:
-var overlay = $('<div id="tumblenet-bookmarklet-overlay"></div>');
-if(!overlay.length){
+var $overlay = $('<div id="tumblenet-bookmarklet-overlay"></div>');
+if(!$overlay.length){
     // append it to the body
-    $('body').append(overlay);
+    $('body').append($overlay);
     alert("overlay placed");
 
     // style it:
-    overlay.css({
+    $overlay.css({
         position: 'fixed',
         top: '0',
         left: '0',
