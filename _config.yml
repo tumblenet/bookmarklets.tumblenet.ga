@@ -21,7 +21,7 @@ permalink: pretty
 production: true
 favicon: favicon.gif
 
-version: 
+version: 1
 
 gems:
    - jekyll-mentions
