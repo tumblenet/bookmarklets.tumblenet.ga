@@ -12,10 +12,6 @@ layout: default
                              if (window.{{ item.title }}!==undefined){
                               {{ item.title }}();
                              } else { 
-                              var meta = document.createElement('meta');
-                              meta.httpEquiv = 'Content-Security-Policy';
-                              meta.content = 'upgrade-insecure-requests';
-                              document.getElementsByTagName('head')[0].appendChild(meta);
                               document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}/testUpdate.js';
                               testUpdate({{ site.version }}, function(upToDate) {
                                   if (upToDate){
