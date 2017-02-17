@@ -1,4 +1,3 @@
-
 {% if page.jquery %}
 var v = "{{ page.jquery.ver | default: "1.3.2" }}";
 
@@ -16,24 +15,24 @@ var v = "{{ page.jquery.ver | default: "1.3.2" }}";
 	} else {
 		init{{ page.title }}();
 	}
-	{% else %}
-		init{{ page.title }}();					       
-	{% endif %}
-	function init{{ page.title }}() {
-		(window.{{ page.title }} = function() {
-			{% if page.selection %}
-			function {{ page.selection }}() {
-				var s = '';
-				if (window.getSelection) {
-					s = window.getSelection();
-				} else if (document.getSelection) {
-					s = document.getSelection();
-				} else if (document.selection) {
-					s = document.selection.createRange().text;
-				}
-				return s;
+{% else %}
+	init{{ page.title }}();					       
+{% endif %}
+function init{{ page.title }}() {
+	(window.{{ page.title }} = function() {
+		{% if page.selection %}
+		function {{ page.selection }}() {
+			var s = '';
+			if (window.getSelection) {
+				s = window.getSelection();
+			} else if (document.getSelection) {
+				s = document.getSelection();
+			} else if (document.selection) {
+				s = document.selection.createRange().text;
 			}
-			{% endif %}
-			{{ content }}
-		})();
-	}
+			return s;
+		}
+		{% endif %}
+		{{ content }}
+	})();
+}
