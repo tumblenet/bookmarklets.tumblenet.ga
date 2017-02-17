@@ -20,7 +20,6 @@ url: "https://tumblenet.github.io/bookmarklets.tumblenet.me" # the base hostname
 permalink: pretty
 production: true
 favicon: favicon.gif
-repository: tumblenet/bookmarklets.tumblenet.me
 
 version: 1
 
