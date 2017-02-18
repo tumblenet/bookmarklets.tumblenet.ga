@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto');
 div.tnOverlay, div.tnOverlay-background  {
-  position: fixed;
+  position: relitive;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -23,19 +23,9 @@ div.tnOverlay > * {
 
 div.tnOverlay > h1 {
   font-family: 'Oswald', sans-serif;
-  display: block;
-  font-size: 2em;
-  -webkit-margin-before: 0.67em;
-  -webkit-margin-after: 0.67em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  font-weight: bold;
 }
 
 div.tnOverlay > h1.tnOverlay-title {
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
+  position: relative;
+    top: 33.33333333333333%;
 }
