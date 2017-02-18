@@ -15,11 +15,14 @@ div.tnBkmklt-Overlay > * {
   font-family: 'Roboto', sans-serif;
 }
 
-h1.tnOverlay-title {
+div.tnBkmklt-Overlay > h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
+div.tnBkmklt-Overlay > h1.tnOverlay-title {
   position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
-  font-family: 'Oswald', sans-serif;
 }
