@@ -8,12 +8,12 @@ if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
 	script.onload = script.onreadystatechange = function(){
 		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
 			done = true;
-			$(init{{ page.title }});
+			//$(init{{ page.title }});
 		}
 	};
 	document.getElementsByTagName("head")[0].appendChild(script);
 } else {
-	init{{ page.title }}()
+	//init{{ page.title }}()
 }
 {% if page.selection %}
 function {{ page.selection }}() {
