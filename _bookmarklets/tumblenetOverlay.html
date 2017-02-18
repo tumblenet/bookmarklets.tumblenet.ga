@@ -5,7 +5,10 @@ var $tnOverlayCss = $('<link class="tnBkmklt-Overlay-css" rel="stylesheet" href=
 if(!$('.tnBkmklt-Overlay-css').length){
   $('head').append($tnOverlayCss);
 }
-var $tnOverlay = $('<div class="tnBkmklt-Overlay"><h1 class="tnOverlay-title"></h1></div>');
+var $tnOverlay = $('<div class="tnBkmklt-Overlay">
+  <h1 class="tnOverlay-title">Tumble Network</h1>
+
+</div>');
 
 if(!$('.tnBkmklt-Overlay').length){
     $('body').append($tnOverlay);
