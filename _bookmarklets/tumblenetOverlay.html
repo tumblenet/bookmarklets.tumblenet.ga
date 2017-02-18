@@ -1,7 +1,6 @@
 ---
 layout: bookmarklet
 ---
-$(function() {
 var $tnOverlayCss = $('<link class="tnBkmklt-Overlay-css" rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
 if(!$('.tnBkmklt-Overlay-css').length){
   $('head').append($tnOverlayCss);
@@ -14,5 +13,4 @@ if(!$('.tnBkmklt-Overlay').length){
 
 $(".tnBkmklet-Overlay").click(function() {
 alert("hi");
-});
 });
