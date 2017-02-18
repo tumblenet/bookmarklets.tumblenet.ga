@@ -2,8 +2,8 @@
 layout: bookmarklet
 jquery: yes
 ---
-var $tnOverlayCss = $('<link rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
-if(!$tnOverlayCss.length){
+var $tnOverlayCss = $('<link id="tumblenet-bookmarklet-overlay-css" rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
+if(!$('#tumblenet-bookmarklet-overlay-css').length){
   $('head').append($tnOverlayCss);
 }
 
