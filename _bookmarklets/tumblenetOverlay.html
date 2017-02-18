@@ -2,12 +2,12 @@
 layout: bookmarklet
 jquery: yes
 ---
-var $tnOverlayCss = $('<link id="tumblenet-bookmarklet-overlay-css" rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
-if(!$('#tumblenet-bookmarklet-overlay-css').length){
+var $tnOverlayCss = $('<link id="tnBkmklt-Overlay-css" rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
+if(!$('#tnBkmklt-Overlay-css').length){
   $('head').append($tnOverlayCss);
 }
 
-var $tnOverlay = $('<div id="tumblenet-bookmarklet-overlay"></div>');
+var $tnOverlay = $('<div id="tnBkmklt-Overlay"></div>');
 if(!$('#tumblenet-bookmarklet-overlay').length){
     $('body').append($tnOverlay);
 }
