@@ -1,6 +1,6 @@
 
 if(!tn{{ page.title }}Yes) {
-{% if page.multiple %}var tn{{ page.title }}Yes = true;{% endif %}
+{% if page.times = "once" %}var tn{{ page.title }}Yes = true;{% endif %}
 
 $(document).ready(function() {
 var v = "{{ page.jquery | default: "3.1.1" }}";
