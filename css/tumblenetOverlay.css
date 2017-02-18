@@ -9,7 +9,7 @@ div.tnOverlay, div.tnOverlay-background  {
   }
 div.tnOverlay-background {
   background-color: #f44336;
-  opacity: 0.5;
+  opacity: 0.75;
    z-index: 10000;
   }
 
