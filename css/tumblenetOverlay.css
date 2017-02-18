@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto');
-div.tnBkmklt-Overlay, div.tnBkmklt-Overlay-background  {
+div.tnOverlay, div.tnOverlay-background  {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -7,7 +7,7 @@ div.tnBkmklt-Overlay, div.tnBkmklt-Overlay-background  {
   height: 100%;
   z-index: 10001;
   }
-div.tnBkmklt-Overlay-background {
+div.tnOverlay-background {
   background-color: #f44336;
   opacity: 0.5;
    z-index: 10000;
@@ -15,16 +15,16 @@ div.tnBkmklt-Overlay-background {
 
 
 
-div.tnBkmklt-Overlay > * {
+div.tnOverlay > * {
   font-family: 'Roboto', sans-serif;
   color: white;
 }
 
-div.tnBkmklt-Overlay > h1 {
+div.tnOverlay > h1 {
   font-family: 'Oswald', sans-serif;
 }
 
-div.tnBkmklt-Overlay > h1.tnOverlay-title {
+div.tnOverlay > h1.tnOverlay-title {
   position: absolute;
     top: 50%;
     left: 50%;
