@@ -2,32 +2,12 @@
 layout: bookmarklet
 jquery: yes
 ---
-// create the element
+var $tnOverlayCss = $('<link rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
+if(!$tnOverlayCss.length){
+  $('head').append($tnOverlayCss);
+}
+
 var $tnOverlay = $('<div id="tumblenet-bookmarklet-overlay"></div>');
 if(!$('#tumblenet-bookmarklet-overlay').length){
-    // append it to the body
-var $tnTitle = $('<h1>Coming Soon</h1>');
-
-
-
     $('body').append($tnOverlay);
-$tnOverlay.append($tnTitle);
-
-    // style it:
-    $tnOverlay.css({
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'red',
-        opacity: '0.5',
-        zIndex: '10000'
-    });
-$tnTitle.css({
-        position: 'fixed',
-        top: '100',
-        left: '100',
-        zIndex: 'inherit'
-    });
 }
