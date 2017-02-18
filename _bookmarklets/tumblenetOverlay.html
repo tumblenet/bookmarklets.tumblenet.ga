@@ -6,10 +6,12 @@ if(!$('.tnBkmklt-Overlay-css').length){
   $('head').append($tnOverlayCss);
 }
 var $tnOverlay = $('<div class="tnBkmklt-Overlay"></div>');
+
 if(!$('.tnBkmklt-Overlay').length){
     $('body').append($tnOverlay);
 }
+var tnOverlay = $('.tnBkmklt-Overlay');
 
-$('.tnBkmklt-Overlay').click(function() {
-alert('hi');
+tnOverlay.click(function() {
+this.Hide();
 });
