@@ -5,12 +5,11 @@ var $tnOverlayCss = $('<link class="tnBkmklt-Overlay-css" rel="stylesheet" href=
 if(!$('.tnBkmklt-Overlay-css').length){
   $('head').append($tnOverlayCss);
 }
-
 var $tnOverlay = $('<div class="tnBkmklt-Overlay"></div>');
 if(!$('.tnBkmklt-Overlay').length){
     $('body').append($tnOverlay);
 }
 
-$(".tnBkmklet-Overlay").click(function() {
-alert("hi");
+$('.tnBkmklt-Overlay').click(function() {
+alert('hi');
 });
