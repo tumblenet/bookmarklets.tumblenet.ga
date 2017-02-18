@@ -17,11 +17,19 @@ div.tnOverlay-background {
 
 div.tnOverlay > * {
   font-family: 'Roboto', sans-serif;
+  text-align: center;
   color: white;
 }
 
 div.tnOverlay > h1 {
   font-family: 'Oswald', sans-serif;
+  display: block;
+  font-size: 2em;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
 }
 
 div.tnOverlay > h1.tnOverlay-title {
