@@ -2,7 +2,7 @@
 if(tn{{ page.title }}Yes == undefined) {
 {% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
 
-$(document).ready(function() {
+
 var v = "{{ page.jquery | default: "3.1.1" }}";
 
 if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
@@ -19,6 +19,7 @@ if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
 } else {
 	//init{{ page.title }}()
 }
+$(document).ready(function() {
 {% if page.selection %}
 function {{ page.selection }}() {
 	var s = '';
