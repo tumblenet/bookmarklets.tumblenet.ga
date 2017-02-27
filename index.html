@@ -13,16 +13,7 @@ layout: default
 if (window.tn{{ item.title }}!==undefined){
 tn{{ item.title }}();
 } else {
-{% comment %}document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}/testUpdate.js';
-testUpdate({{ site.version | default: 0 }}, function(upToDate) {
-if (upToDate){ {% endcomment %}
 document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
-{% comment %} } else {
-alert('This bookmarklet is out of date');
-var win = window.open('http://bookmarlets.tumblenet.me', '_blank');
-win.focus();
-}
-});{% endcomment %}
 }
 })();" class="mdl-button mdl-button--colored mdl-button--raised">{{ item.title }}</a>
                 </p>
