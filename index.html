@@ -10,8 +10,8 @@ layout: default
                 {{ item.description }}
                 <p>
                     <a href="javascript:(function(){
-if (window.{{ item.title }}!==undefined){
-{{ item.title }}();
+if (window.tn{{ item.title }}!==undefined){
+tn{{ item.title }}();
 } else {
 {% comment %}document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}/testUpdate.js';
 testUpdate({{ site.version | default: 0 }}, function(upToDate) {
