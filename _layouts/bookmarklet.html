@@ -1,48 +1,40 @@
-var tn{{ page.title }};
-if(tn{{ page.title }}Yes === undefined) {
-	var tn{{ page.title }}Yes = false;
-}
-{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
-if(tn{{ page.title }}Yes) {
-		{% if page.selection %}
-			function tn{{ page.selection }}() {
-				var s = '';
-				if (window.getSelection) {
-					s = window.getSelection();
-				} else if (document.getSelection) {
-					s = document.getSelection();
-				} else if (document.selection) {
-					s = document.selection.createRange().text;
-				}
-				return s;
-			}
-		{% endif %}
-		window.tn{{ page.title }} = function() {
-			{{ content }}					      
+if(!tn{{ page.title }}Yes) {
+{% if page.times = "once" %}var tn{{ page.title }}Yes = true;{% endif %}
+
+$(document).ready(function() {
+var v = "{{ page.jquery | default: "3.1.1" }}";
+
+if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
+	var done = false;
+	var script = document.createElement("script");
+	script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
+	script.onload = script.onreadystatechange = function(){
+		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+			done = true;
+			//$(init{{ page.title }});
 		}
-	}
-
-	var v = "{{ page.jquery | default: "3.1.1" }}";
-
-	if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
-		var done = false;
-		var script = document.createElement("script");
-		script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
-		script.onload = script.onreadystatechange = function(){
-			if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
-				done = true;
-				tn{{ page.title }}();
-			}
-		};
-		document.getElementsByTagName("head")[0].appendChild(script);
-	} else {
-		tn{{ page.title }}();
-	}
-
-
-
+	};
+	document.getElementsByTagName("head")[0].appendChild(script);
 } else {
-	console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
+	//init{{ page.title }}()
 }
-									       
-									       
+{% if page.selection %}
+function {{ page.selection }}() {
+	var s = '';
+	if (window.getSelection) {
+		s = window.getSelection();
+	} else if (document.getSelection) {
+		s = document.getSelection();
+	} else if (document.selection) {
+		s = document.selection.createRange().text;
+	}
+	return s;
+}
+{% endif %}
+{{ content }}						       
+});
+							       
+							       
+} else {
+console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
+}
