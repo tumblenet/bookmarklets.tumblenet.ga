@@ -1,46 +1,47 @@
 
 if(tn{{ page.title }}Yes == undefined) {
-{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
+	{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
 
-window.onload = function() {
-var v = "{{ page.jquery | default: "3.1.1" }}";
+	window.onload = function() {
+		var v = "{{ page.jquery | default: "3.1.1" }}";
 
-if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
-	var done = false;
-	var script = document.createElement("script");
-	script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
-	script.onload = script.onreadystatechange = function(){
-		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
-			done = true;
-			$(init{{ page.title }});
+		if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
+			var done = false;
+			var script = document.createElement("script");
+			script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
+			script.onload = script.onreadystatechange = function(){
+				if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+					done = true;
+					$(init{{ page.title }});
+				}
+			};
+			document.getElementsByTagName("head")[0].appendChild(script);
+		} else {
+			init{{ page.title }}()
+
 		}
-	};
-	document.getElementsByTagName("head")[0].appendChild(script);
-} else {
-	init{{ page.title }}()
-							       
-}
-//$(document).ready(function() {
-							       
-{% if page.selection %}
-function {{ page.selection }}() {
-	var s = '';
-	if (window.getSelection) {
-		s = window.getSelection();
-	} else if (document.getSelection) {
-		s = document.getSelection();
-	} else if (document.selection) {
-		s = document.selection.createRange().text;
+		//$(document).ready(function() {
+
+			{% if page.selection %}
+				function {{ page.selection }}() {
+					var s = '';
+					if (window.getSelection) {
+						s = window.getSelection();
+					} else if (document.getSelection) {
+						s = document.getSelection();
+					} else if (document.selection) {
+						s = document.selection.createRange().text;
+					}
+					return s;
+				}
+			{% endif %}
+			var init{{ page.title }} = function() {
+				{{ content }}					      
+			}
+		//});
 	}
-	return s;
-}
-{% endif %}
-var init{{ page.title }} = function() {
-{{ content }}					      }
-//});
-}
 							       
 							       
 } else {
-console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
+	console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
 }
