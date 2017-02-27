@@ -1,8 +1,10 @@
 var tn{{ page.title }};
-var tn{{ page.title }}Yes;
+if(tn{{ page.title }}Yes === undefined) {
+	var tn{{ page.title }}Yes = false;
+}
 window.onload = function() {
 	{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
-	if(tn{{ page.title }}Yes === undefined) {
+	if(tn{{ page.title }}Yes) {
 		if(tn{{ page.title }} === undefined) {
 			{% if page.selection %}
 				function tn{{ page.selection }}() {
