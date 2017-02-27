@@ -20,7 +20,7 @@ if(tn{{ page.title }}Yes === undefined) {
 } else {
 console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
 }
-
+{% if page.selection %}
 function {{ page.selection }}() {
 	var s = '';
 	if (window.getSelection) {
@@ -32,6 +32,7 @@ function {{ page.selection }}() {
 	}
 	return s;
 }
+{% endif %}
 
 function tn{{ page.title }}() {
 {{ content }}
