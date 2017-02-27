@@ -1,9 +1,9 @@
-var {{ page.title }} = undefined;
-var tn{{ page.title }}Yes = undefined;
+var {{ page.title }};
+var tn{{ page.title }}Yes;
 window.onload = function() {
 	{% if page.times == "once" %}tn{{ page.title }}Yes = true;{% endif %}
-	if(tn{{ page.title }}Yes == undefined) {
-		if({{ page.title }} == undefined) {
+	if(tn{{ page.title }}Yes === undefined) {
+		if({{ page.title }} === undefined) {
 			{% if page.selection %}
 				function {{ page.selection }}() {
 					var s = '';
