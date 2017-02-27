@@ -15,7 +15,7 @@ window.onload = function() {
 					return s;
 				}
 			{% endif %}
-			function {{ page.title }}() {
+			var {{ page.title }} = function() {
 				{{ content }}					      
 			}
 		}
