@@ -1,5 +1,5 @@
 
-if(!tn{{ page.title }}Yes) {
+if(tn{{ page.title }}Yes == undefined) {
 {% if page.times = "once" %}var tn{{ page.title }}Yes = true;{% endif %}
 
 $(document).ready(function() {
