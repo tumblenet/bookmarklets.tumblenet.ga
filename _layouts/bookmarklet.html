@@ -1,5 +1,7 @@
-var {{ page.title }};
+var {{ page.title }} = undefined;
+var tn{{ page.title }}Yes = undefined;
 window.onload = function() {
+	{% if page.times == "once" %}tn{{ page.title }}Yes = true;{% endif %}
 	if(tn{{ page.title }}Yes == undefined) {
 		if({{ page.title }} == undefined) {
 			{% if page.selection %}
@@ -20,7 +22,6 @@ window.onload = function() {
 			}
 		}
 
-		{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
 		var v = "{{ page.jquery | default: "3.1.1" }}";
 
 		if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
