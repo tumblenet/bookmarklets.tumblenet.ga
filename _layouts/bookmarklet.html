@@ -1,9 +1,11 @@
+var tn{{ page.title }};
+var tn{{ page.title }}Yes;
 window.onload = function() {
 	{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
 	if(tn{{ page.title }}Yes === undefined) {
-		if({{ page.title }} === undefined) {
+		if(tn{{ page.title }} === undefined) {
 			{% if page.selection %}
-				function {{ page.selection }}() {
+				function tn{{ page.selection }}() {
 					var s = '';
 					if (window.getSelection) {
 						s = window.getSelection();
@@ -15,7 +17,7 @@ window.onload = function() {
 					return s;
 				}
 			{% endif %}
-			var {{ page.title }} = function() {
+			tn{{ page.title }} = function() {
 				{{ content }}					      
 			}
 		}
