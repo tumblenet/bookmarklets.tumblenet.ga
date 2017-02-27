@@ -1,8 +1,6 @@
-
-if(tn{{ page.title }}Yes == undefined) {
-	{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
-
-	window.onload = function() {
+window.onload = function() {
+	if(tn{{ page.title }}Yes == undefined) {
+		{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
 		var v = "{{ page.jquery | default: "3.1.1" }}";
 
 		if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
@@ -18,7 +16,6 @@ if(tn{{ page.title }}Yes == undefined) {
 			document.getElementsByTagName("head")[0].appendChild(script);
 		} else {
 			init{{ page.title }}()
-
 		}
 		//$(document).ready(function() {
 
@@ -39,9 +36,10 @@ if(tn{{ page.title }}Yes == undefined) {
 				{{ content }}					      
 			}
 		//});
+
+
+	} else {
+		console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
 	}
-							       
-							       
-} else {
-	console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
+									       
 }
