@@ -1,20 +1,22 @@
 window.onload = function() {
 	if(tn{{ page.title }}Yes == undefined) {
-		{% if page.selection %}
-			function {{ page.selection }}() {
-				var s = '';
-				if (window.getSelection) {
-					s = window.getSelection();
-				} else if (document.getSelection) {
-					s = document.getSelection();
-				} else if (document.selection) {
-					s = document.selection.createRange().text;
+		if({{ page.title }} == undefined) {
+			{% if page.selection %}
+				function {{ page.selection }}() {
+					var s = '';
+					if (window.getSelection) {
+						s = window.getSelection();
+					} else if (document.getSelection) {
+						s = document.getSelection();
+					} else if (document.selection) {
+						s = document.selection.createRange().text;
+					}
+					return s;
 				}
-				return s;
+			{% endif %}
+			function {{ page.title }}() {
+				{{ content }}					      
 			}
-		{% endif %}
-		function init{{ page.title }}() {
-			{{ content }}					      
 		}
 
 		{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
@@ -32,7 +34,7 @@ window.onload = function() {
 			};
 			document.getElementsByTagName("head")[0].appendChild(script);
 		} else {
-			init{{ page.title }}();
+			{{ page.title }}();
 		}
 
 		
