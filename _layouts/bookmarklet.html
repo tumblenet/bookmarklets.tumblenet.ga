@@ -1,22 +1,20 @@
 if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
-		var done = false;
-		var script = document.createElement("script");
-		script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + tn.v + "/jquery.min.js";
-		script.onload = script.onreadystatechange = function(){
-			if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
-				done = true;
-				$(tn.{{ page.title }});
-			}
-		};
-		document.getElementsByTagName("head")[0].appendChild(script);
-	} else {
-		$(tn.{{ page.title }});
-	}
+	var done = false;
+	var script = document.createElement("script");
+	script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + tn.v + "/jquery.min.js";
+	script.onload = script.onreadystatechange = function(){
+		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+			done = true;
+			$(tn.{{ page.title }});
+		}
+	};
+	document.getElementsByTagName("head")[0].appendChild(script);
+} else {
+	$(tn.{{ page.title }});
+}
 
 var tn = {
-	v:"{{ page.jquery | default: "2.1.1" }}";
-	
-
+	v: "{{ page.jquery | default: '2.1.1' }}",
 	{% if page.selection %}
 	{{ page.selection }}: function() {
 		var s = '';
@@ -28,7 +26,7 @@ var tn = {
 			s = document.selection.createRange().text;
 		}
 		return s;
-	}
+	},
 	{% endif %}
 
 	{{ page.title }}: function() {
@@ -49,9 +47,9 @@ var tn = {
 
 
 
-	}
-}
+	};
+};
 							       
 var {{ page.title }} = {
 	{{ content }}
-}
+};
