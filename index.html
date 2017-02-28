@@ -10,7 +10,7 @@ layout: default
                 {{ item.description }}
                 <p>
                     <a href="javascript:(function(){
-if(typeof tn{{ item.title }} === 'function'){
+if(typeof {{ item.title }}.Main === 'function'){
 tn{{ item.title }}();
 } else {
 document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
