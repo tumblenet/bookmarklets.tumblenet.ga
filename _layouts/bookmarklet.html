@@ -1,6 +1,6 @@
 if(tn{{ page.title }}Yes === undefined) {
 	{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
-	var v = "{{ page.jquery | default: "3.1.1" }}";
+	var v = "{{ page.jquery | default: "2.1.1" }}";
 
 	if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
 		var done = false;
