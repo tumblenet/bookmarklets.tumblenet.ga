@@ -18,7 +18,7 @@ Main: function() {
 //to add functions do this
 functionName: function() {
 //function contenst
-}; //<== end the last thing with a semi-collon ';'
+}, //<== end everything thing with a commer ','
 
 
 
