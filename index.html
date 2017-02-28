@@ -8,13 +8,13 @@ layout: default
             <h4>{{ item.title }}</h4>
             {{ item.description }}
             <p>
-                <a id="bookmarkme" rel="sidebar" title="{{ item.title }}" href="javascript:(function(){
+                <a rel="sidebar" title="{{ item.title }}" href="javascript:(function(){
 if(typeof {{ item.title }} != 'undefined'){
 {{ item.title }}.Main();
 } else {
 document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
 }
-})();" class="mdl-button mdl-button--colored mdl-button--raised">{{ item.title }}</a>
+})();" class="mdl-button mdl-button--colored mdl-button--raised jQueryBookmark">{{ item.title }}</a>
             </p>
         </div>
         <div class="mdl-card__actions">
