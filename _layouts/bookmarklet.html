@@ -1,25 +1,21 @@
-if(tn{{ page.title }}Yes === undefined) {
-	{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
-	var v = "{{ page.jquery | default: "2.1.1" }}";
+var v = "{{ page.jquery | default: "2.1.1" }}";
 
-	if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
-		var done = false;
-		var script = document.createElement("script");
-		script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
-		script.onload = script.onreadystatechange = function(){
-			if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
-				done = true;
-				$(tn{{ page.title }});
-			}
-		};
-		document.getElementsByTagName("head")[0].appendChild(script);
-	} else {
-		$(tn{{ page.title }});
-	}
-
+if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
+	var done = false;
+	var script = document.createElement("script");
+	script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
+	script.onload = script.onreadystatechange = function(){
+		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+			done = true;
+			$(tn{{ page.title }});
+		}
+	};
+	document.getElementsByTagName("head")[0].appendChild(script);
 } else {
-console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
+	$(tn{{ page.title }});
 }
+
+
 {% if page.selection %}
 function {{ page.selection }}() {
 	var s = '';
@@ -35,5 +31,10 @@ function {{ page.selection }}() {
 {% endif %}
 
 function tn{{ page.title }}() {
-{{ content }}
+	if(tn{{ page.title }}Yes === undefined) {
+		{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
+		{{ content }}
+	} else {
+		console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
+	}
 }
