@@ -1,12 +1,20 @@
-$(document).ready(function() {
-  $("#bookmarkme").click(function() {
-    if (window.sidebar) { // Mozilla Firefox Bookmark
-      window.sidebar.addPanel(location.href,document.title,"");
-    } else if(window.external) { // IE Favorite
-      window.external.AddFavorite(location.href,document.title); }
-    else if(window.opera && window.print) { // Opera Hotlist
-      this.title=document.title;
-      return true;
+$(document).ready(function(){
+  $("a.jQueryBookmark").click(function(e){
+    e.preventDefault(); // this will prevent the anchor tag from going the user off to the link
+    var bookmarkUrl = this.href;
+    var bookmarkTitle = this.title;
+
+    if (window.sidebar) { // For Mozilla Firefox Bookmark
+        window.sidebar.addPanel(bookmarkTitle, bookmarkUrl,"");
+    } else if( window.external || document.all) { // For IE Favorite
+        window.external.AddFavorite( bookmarkUrl, bookmarkTitle);
+    } else if(window.opera) { // For Opera Browsers
+        $("a.jQueryBookmark").attr("href",bookmarkUrl);
+        $("a.jQueryBookmark").attr("title",bookmarkTitle);
+        $("a.jQueryBookmark").attr("rel","sidebar");
+    } else { // for other browsers which does not support
+         alert('Your browser does not support this bookmark action please drag the newley created button to your bookmarks bar');
+         return false;
     }
   });
 });
