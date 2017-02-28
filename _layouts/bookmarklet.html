@@ -1,40 +1,57 @@
-var v = "{{ page.jquery | default: "2.1.1" }}";
-
 if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
-	var done = false;
-	var script = document.createElement("script");
-	script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
-	script.onload = script.onreadystatechange = function(){
-		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
-			done = true;
-			$(tn{{ page.title }});
-		}
-	};
-	document.getElementsByTagName("head")[0].appendChild(script);
-} else {
-	$(tn{{ page.title }});
-}
-
-
-{% if page.selection %}
-function {{ page.selection }}() {
-	var s = '';
-	if (window.getSelection) {
-		s = window.getSelection();
-	} else if (document.getSelection) {
-		s = document.getSelection();
-	} else if (document.selection) {
-		s = document.selection.createRange().text;
-	}
-	return s;
-}
-{% endif %}
-
-function tn{{ page.title }}() {
-	if(tn{{ page.title }}Yes === undefined) {
-		{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
-		{{ content }}
+		var done = false;
+		var script = document.createElement("script");
+		script.src = "https://ajax.googleapis.com/ajax/libs/jquery/" + tn.v + "/jquery.min.js";
+		script.onload = script.onreadystatechange = function(){
+			if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+				done = true;
+				$(tn.{{ page.title }});
+			}
+		};
+		document.getElementsByTagName("head")[0].appendChild(script);
 	} else {
-		console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
+		$(tn.{{ page.title }});
 	}
+
+var tn = {
+	v:"{{ page.jquery | default: "2.1.1" }}";
+	
+
+	{% if page.selection %}
+	{{ page.selection }}: function() {
+		var s = '';
+		if (window.getSelection) {
+			s = window.getSelection();
+		} else if (document.getSelection) {
+			s = document.getSelection();
+		} else if (document.selection) {
+			s = document.selection.createRange().text;
+		}
+		return s;
+	}
+	{% endif %}
+
+	{{ page.title }}: function() {
+		try{ tn{{ page.title }}Yes; }
+		catch(e) {
+		    if(e.name == 'ReferenceError') {
+			var tn{{ page.title }}Yes = false;
+		    }
+		}
+		if(!tn{{ page.title }}Yes) {
+			{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
+			{{ page.title }}.main();
+
+		} else {
+			console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
+		}
+
+
+
+
+	}
+}
+							       
+var {{ page.title }} = {
+	{{ content }}
 }
