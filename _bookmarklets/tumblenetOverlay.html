@@ -2,7 +2,7 @@
 layout: bookmarklet
 times: once
 ---
-main: function() {
+Main: function() {
   var $tnOverlayCss = $('<link class="tnBkmklt-Overlay-css" rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
   if(!$('.tnBkmklt-Overlay-css').length){
     $('head').append($tnOverlayCss);
