@@ -8,7 +8,7 @@ layout: default
             <h4>{{ item.title }}</h4>
             {{ item.description }}
             <p>
-                <a href="javascript:(function(){
+                <a id="bookmarkme" rel="sidebar" title="{{ item.title }}" href="javascript:(function(){
 if(typeof {{ item.title }} != 'undefined'){
 {{ item.title }}.Main();
 } else {
