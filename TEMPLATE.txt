@@ -1,7 +1,7 @@
 # WHEN YOU MAKE YOUR BOOKMARKLEY PUT IT IN THE '_bookmarklets' FOLDER AND MAKE THE FILE EXTENTION '.html'
 ---
 layout: bookmarket
-title: [name type sumthing here to identify variables and functions]
+title: [name type something here to identify variables and functions]
 
 jquery: [OPTIONAL: the version of jquery you want     Defalts to 2.1.1]
 
@@ -24,7 +24,7 @@ functionName: function() {
 
 /*
 OTHER INFORMATION:
-to reference variablesdo this
+to reference variables do this
 pageTitle.varName
 
 to reference functions do this
