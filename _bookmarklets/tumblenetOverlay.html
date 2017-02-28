@@ -2,26 +2,28 @@
 layout: bookmarklet
 times: once
 ---
+main: function() {
+  var $tnOverlayCss = $('<link class="tnBkmklt-Overlay-css" rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
+  if(!$('.tnBkmklt-Overlay-css').length){
+    $('head').append($tnOverlayCss);
+  }
+  var html = `
+  <div class="tnOverlay-background"></div>
+  <div class="tnOverlay">
+    <h1 class="tnOverlay-title">Tumble Network</h1>
+  </div>
+  `;
+  var $tnOverlay = $(html);
 
-var $tnOverlayCss = $('<link class="tnBkmklt-Overlay-css" rel="stylesheet" href="{{ site.url }}/css/tumblenetOverlay.css">');
-if(!$('.tnBkmklt-Overlay-css').length){
-  $('head').append($tnOverlayCss);
+  if(!$('.tnBkmklt-Overlay').length){
+      $('body').append($tnOverlay);
+  } else {
+  $('.tnBkmklt-Overlay').show();
+  }
+  var tnOverlay = $('.tnBkmklt-Overlay');
+
+  //tnOverlay.click(function() {
+  //$(this).hide();
+  //});
+
 }
-var html = `
-<div class="tnOverlay-background"></div>
-<div class="tnOverlay">
-  <h1 class="tnOverlay-title">Tumble Network</h1>
-</div>
-`;
-var $tnOverlay = $(html);
-
-if(!$('.tnBkmklt-Overlay').length){
-    $('body').append($tnOverlay);
-} else {
-$('.tnBkmklt-Overlay').show();
-}
-var tnOverlay = $('.tnBkmklt-Overlay');
-
-//tnOverlay.click(function() {
-//$(this).hide();
-//});
