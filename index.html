@@ -10,7 +10,7 @@ layout: default
                 {{ item.description }}
                 <p>
                     <a href="javascript:(function(){
-if (tn{{ item.title }} === undefined){
+if(tn{{ item.title }}===undefined){
 document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
 } else {
 tn{{ item.title }}();
