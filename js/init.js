@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("a.jQueryBookmark").click(function(e){
+  $("a#jQueryBookmark").click(function(e){
     e.preventDefault(); // this will prevent the anchor tag from going the user off to the link
     var bookmarkUrl = this.href;
     var bookmarkTitle = this.title;
