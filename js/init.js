@@ -13,7 +13,7 @@ $(document).ready(function(){
         $("a.jQueryBookmark").attr("title",bookmarkTitle);
         $("a.jQueryBookmark").attr("rel","sidebar");
     } else { // for other browsers which does not support
-         alert('Your browser does not support this bookmark action please drag the newley created button to your bookmarks bar');
+         alert('Your browser does not support this bookmark action please drag the other button to your bookmarks bar');
          return false;
     }
   });
