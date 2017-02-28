@@ -9,7 +9,7 @@ layout: default
             {{ item.description }}
             <p>
                 <a href="javascript:(function(){
-if(typeof {{ page.title }} != 'undefined'){
+if(typeof {{ item.title }} != 'undefined'){
 {{ item.title }}.Main();
 } else {
 document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
