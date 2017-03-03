@@ -38,7 +38,7 @@ document.body.appendChild(document.createElement('script')).src='{{ site.url | r
         <li class="mdl-menu__item" disabled>Under Construction</li>
     </ul>
 </section>
-<div class="mdl-tooltip mdl-tooltip--large" for="jQueryBookmark">
+<div class="mdl-tooltip mdl-tooltip--large" for="jQueryBookmark{{ forloop.id }}">
 Does not work in Chrome.
 </div>
 {% endfor %}
