@@ -12,7 +12,7 @@ layout: default
         </div>
         <div class="mdl-card__actions">
             
-<a id="jQueryBookmark{{ forloop.id }}" rel="sidebar" title="{{ item.title }}" href="javascript:(function(){
+<a id="jQueryBookmark{{ forloop.index0 }}" rel="sidebar" title="{{ item.title }}" href="javascript:(function(){
 if(typeof {{ item.title }} != 'undefined'){
 {{ item.title }}.Main();
 } else {
@@ -38,7 +38,7 @@ document.body.appendChild(document.createElement('script')).src='{{ site.url | r
         <li class="mdl-menu__item" disabled>Under Construction</li>
     </ul>
 </section>
-<div class="mdl-tooltip mdl-tooltip--large" for="jQueryBookmark{{ forloop.id }}">
+<div class="mdl-tooltip mdl-tooltip--large" for="jQueryBookmark{{ forloop.index0 }}">
 Does not work in Chrome.
 </div>
 {% endfor %}
