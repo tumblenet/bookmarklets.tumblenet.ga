@@ -1,20 +1,32 @@
 $(document).ready(function(){
   $("a[id^=jQueryBookmark").click(function(e){
-    e.preventDefault(); // this will prevent the anchor tag from going the user off to the link
-    var bookmarkUrl = this.href;
-    var bookmarkTitle = this.title;
+    e.preventDefault();
+    var bookmarkURL = window.location.href;
+    var bookmarkTitle = document.title;
 
-    if (window.sidebar) { // For Mozilla Firefox Bookmark
-        window.sidebar.addPanel(bookmarkTitle, bookmarkUrl,"");
-    } else if( window.external || document.all) { // For IE Favorite
-        window.external.AddFavorite( bookmarkUrl, bookmarkTitle);
-    } else if(window.opera) { // For Opera Browsers
-        $("a.jQueryBookmark").attr("href",bookmarkUrl);
-        $("a.jQueryBookmark").attr("title",bookmarkTitle);
-        $("a.jQueryBookmark").attr("rel","sidebar");
-    } else { // for other browsers which does not support
-         alert('Your browser does not support this bookmark action please drag the other button to your bookmarks bar');
-         return false;
+    if ('addToHomescreen' in window && window.addToHomescreen.isCompatible) {
+        // Mobile browsers
+        addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
+    } else if (window.sidebar && window.sidebar.addPanel) {
+        // Firefox version < 23
+        window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+    } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+        // Firefox version >= 23 and Opera Hotlist
+        $(this).attr({
+            href: bookmarkURL,
+            title: bookmarkTitle,
+            rel: 'sidebar'
+        }).off(e);
+        return true;
+    } else if (window.external && ('AddFavorite' in window.external)) {
+        // IE Favorite
+        window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+    } else {
+        // Other browsers (mainly WebKit - Chrome/Safari)
+        alert('Please press ' + (/Mac/i.test(navigator.userAgent) ? 'CMD' : 'Strg') + ' + D to add this page to your favorites.');
     }
+
+    return false;
+});
   });
 });
