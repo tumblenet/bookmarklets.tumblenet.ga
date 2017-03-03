@@ -38,7 +38,7 @@ var tn = {
 		}
 		if(!tn{{ page.title }}Yes) {
 			{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
-			{{ page.title }}.main();
+			{{ page.title }}.Main();
 
 		} else {
 			console.log("ERROR: Bookmarket '{{ page.title }}' already loaded");							       
