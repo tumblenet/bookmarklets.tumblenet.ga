@@ -12,7 +12,7 @@ layout: default
         </div>
         <div class="mdl-card__actions">
             
-<a id="jQueryBookmark" rel="sidebar" title="{{ item.title }}" href="javascript:(function(){
+<a id="jQueryBookmark{{ forloop.id }}" rel="sidebar" title="{{ item.title }}" href="javascript:(function(){
 if(typeof {{ item.title }} != 'undefined'){
 {{ item.title }}.Main();
 } else {
