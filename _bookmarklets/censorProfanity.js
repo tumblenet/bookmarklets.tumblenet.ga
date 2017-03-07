@@ -1,6 +1,5 @@
 ---
 layout: bookmarklets
-title: Censor Profanity
 ---
 
 Main: function() {
