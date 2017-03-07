@@ -17,11 +17,11 @@ var tn = {
 		try{ tn{{ page.title }}Yes; }
 		catch(e) {
 		    if(e.name == 'ReferenceError') {
-			var tn{{ page.title }}Yes = false;
+			var tn{{ page.title }}Yes = 0;
 		    }
 		}
-		if(!tn{{ page.title }}Yes) {
-			{% if page.times == "once" %}var tn{{ page.title }}Yes = true;{% endif %}
+		if({% unless page.times %}!{% endunless %}tn{{ page.title }}Yes{% if page.times %} <= {{ page.times }}{% wnd ifif %} {
+			{% if page.times %}var tn{{ page.title }}Yes++;{% endif %}
 			{{ page.title }}.Main();
 
 		} else {
