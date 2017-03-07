@@ -28,7 +28,7 @@ tn.{{ item.title }}();
 document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
 }
 })();" class="mdl-button">{{ item.title }}</a>
-            <a href="{{site.github.repository_url}}/blob/gh-pages/_bookmarklets/{{ item.url }}" class="mdl-button">View Source</a>
+            <a href="{{site.github.repository_url}}/blob/gh-pages/_bookmarklets{{ item.url }}" class="mdl-button">View Source</a>
         </div>
     </div>
     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn{{item.title | sligify }}">
