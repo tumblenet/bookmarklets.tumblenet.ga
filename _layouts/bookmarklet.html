@@ -14,13 +14,13 @@ var tn = {
 	{% endif %}
 
 	{{ page.title }}: function() {
-		if (window.tn{{ page.title }}Yes === undefined) {
-			window.tn{{ page.title }}Yes = 0;
-			console.log(window.tn{{ page.title }}Yes);
+		if (window.tn{{ page.title }}TimesRan === undefined) {
+			window.tn{{ page.title }}TimesRan = 0;
+			console.log(window.tn{{ page.title }}TimesRan);
 		}
-		if({% unless page.times %}!{% endunless %}window.tn{{ page.title }}Yes{% if page.times %} < {{ page.times }}{% endif %}) {
-			{% if page.times %}window.tn{{ page.title }}Yes++;{% endif %}
-			  console.log(winndow.tn{{ page.title }}Yes);
+		if({% unless page.times %}!{% endunless %}window.tn{{ page.title }}TimesRan{% if page.times %} < {{ page.times }}{% endif %}) {
+			{% if page.times %}window.tn{{ page.title }}TimesRan++;{% endif %}
+			  console.log(winndow.tn{{ page.title }}TimesRan);
 			{{ page.title }}.Main();
 
 		} else {
