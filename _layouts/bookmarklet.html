@@ -14,12 +14,9 @@ var tn = {
 	{% endif %}
 
 	{{ page.title }}: function() {
-		try{ tn{{ page.title }}Yes; }
-		catch(e) {
-		    if(e.name == 'ReferenceError') {
+		if (typeof variable !== 'undefined') {
 			var tn{{ page.title }}Yes = 0;
-console.log(tn{{ page.title }}Yes);
-		    }
+			console.log(tn{{ page.title }}Yes);
 		}
 		if({% unless page.times %}!{% endunless %}tn{{ page.title }}Yes{% if page.times %} < {{ page.times }}{% endif %}) {
 			{% if page.times %}tn{{ page.title }}Yes++;{% endif %}
