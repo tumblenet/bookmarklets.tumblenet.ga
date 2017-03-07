@@ -4,6 +4,7 @@ layout: bookmarket
 title: [name type something here to identify variables and functions]
 
 jquery: [OPTIONAL: the version of jquery you want     Defalts to 2.1.1]
+times: [OPTIONAL: The number of time you would like this function to be used]
 
 ---
 //variables
