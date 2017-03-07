@@ -14,7 +14,7 @@ var tn = {
 	{% endif %}
 
 	{{ page.title }}: function() {
-		if (typeof variable !== 'undefined') {
+		if (typeof tn{{ page.title }}Yes !== 'undefined') {
 			var tn{{ page.title }}Yes = 0;
 			console.log(tn{{ page.title }}Yes);
 		}
