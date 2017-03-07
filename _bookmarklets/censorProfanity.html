@@ -1,5 +1,7 @@
 ---
 layout: bookmarklets
+description: "censors all profanity on the page"
+times: 1
 ---
 
 Main: function() {
@@ -10,12 +12,12 @@ Main: function() {
     scriptIsProfanity.onload = scriptIsProfanity.onreadystatechange = function(){
       if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
         done = true;
-        this.lookThroughWords(document.body, /[\u0600-\u06FF]+/);
+        this.LookThroughWords(document.body, /[\u0600-\u06FF]+/);
       }
     };
     document.getElementsByTagName("head")[0].appendChild(script);
   } else {
-    this.lookThroughWords(document.body, /[\u0600-\u06FF]+/);
+    this.LookThroughWords(document.body, /[\u0600-\u06FF]+/);
   }
 },
 
