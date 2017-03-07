@@ -14,7 +14,7 @@ layout: default
             
 <a id="jQueryBookmark{{ forloop.index0 }}" rel="sidebar" title="{{ item.title }}" href="javascript:(function(){
 if(typeof {{ item.title }} != 'undefined'){
-{{ item.title }}.Main();
+tn.{{ item.title }}();
 } else {
 document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
 }
@@ -23,7 +23,7 @@ document.body.appendChild(document.createElement('script')).src='{{ site.url | r
             
                 <a rel="sidebar" title="Drag me to the bookmarks bar" href="javascript:(function(){
 if(typeof {{ item.title }} != 'undefined'){
-{{ item.title }}.Main();
+tn.{{ item.title }}();
 } else {
 document.body.appendChild(document.createElement('script')).src='{{ site.url | remove_first: 'https:' }}{{ item.url }}';
 }
