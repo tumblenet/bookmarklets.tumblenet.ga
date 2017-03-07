@@ -19,8 +19,8 @@ var tn = {
 			console.log({{ page.title }}.TimesRan);
 		}
 		if({% unless page.times %}!{% endunless %}{{ page.title }}.TimesRan{% if page.times %} < {{ page.times }}{% endif %}) {
-			{% if page.times %}{{ page.title }}.TimesRan++;{% endif %}
-			  console.log(window.tn{{ page.title }}TimesRan);
+			{{ page.title }}.TimesRan++;
+			  console.log({{ page.title }}.TimesRan);
 			{{ page.title }}.Main();
 
 		} else {
