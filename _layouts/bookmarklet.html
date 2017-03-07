@@ -14,7 +14,7 @@ var tn = {
 	{% endif %}
 
 	{{ page.title }}: function() {
-		if (window.tn{{ page.title }}TimesRan === undefined) {
+		if ({{ page.title }}.TimesRan === undefined) {
 			{{ page.title }}.TimesRan = 0;
 			//console.log({{ page.title }}.TimesRan);
 		}
