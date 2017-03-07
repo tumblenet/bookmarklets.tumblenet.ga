@@ -12,34 +12,20 @@ Main: function() {
     scriptIsProfanity.onload = scriptIsProfanity.onreadystatechange = function(){
       if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
         done = true;
-        this.LookThroughWords(document.body, /[\u0600-\u06FF]+/);
+        this.LookThroughWords();
       }
     };
     document.getElementsByTagName("head")[0].appendChild(script);
   } else {
-    this.LookThroughWords(document.body);
+    this.LookThroughWords();
   }
 },
 
-LookThroughWords: function(node) {
-  var child;
-
-  switch (node.nodeType) {
-    case 1: // Element
-      for (child = node.firstChild;
-           child;
-           child = child.nextSibling) {
-        this.LookThroughWords(child);
-      }
-      break;
-
-    case 3: // Text node
-      //handleText(node, targetRe);
-      //isProfanity(node,function(t){
-          // t will equal true if it contains a swear word and false if not
-      //});
-      
-      console.log(node.nodeValue);
-      break;
-  }
+LookThroughWords: function() {
+  for (item in this.all) {
+     item.text("hello");
+   }
+                                                                           }    
 },
+
+all: document.getElementsByTagName("*"),
