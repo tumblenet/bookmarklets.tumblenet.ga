@@ -21,7 +21,7 @@ var tn = {
 		    }
 		}
 		if({% unless page.times %}!{% endunless %}tn{{ page.title }}Yes{% if page.times %} <= {{ page.times }}{% endif %}) {
-			{% if page.times %}var tn{{ page.title }}Yes++;{% endif %}
+			{% if page.times %}tn{{ page.title }}Yes++;{% endif %}
 			{{ page.title }}.Main();
 
 		} else {
