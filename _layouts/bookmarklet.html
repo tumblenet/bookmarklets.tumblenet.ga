@@ -18,12 +18,12 @@ var tn = {
 		catch(e) {
 		    if(e.name == 'ReferenceError') {
 			var tn{{ page.title }}Yes = 0;
-console.log(21: tn{{ page.title }}Yes);
+console.log(tn{{ page.title }}Yes);
 		    }
 		}
 		if({% unless page.times %}!{% endunless %}tn{{ page.title }}Yes{% if page.times %} < {{ page.times }}{% endif %}) {
 			{% if page.times %}tn{{ page.title }}Yes++;{% endif %}
-			  console.log(26: tn{{ page.title }}Yes);
+			  console.log(tn{{ page.title }}Yes);
 			{{ page.title }}.Main();
 
 		} else {
