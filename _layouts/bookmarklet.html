@@ -16,11 +16,11 @@ var tn = {
 	{{ page.title }}: function() {
 		if (window.tn{{ page.title }}TimesRan === undefined) {
 			{{ page.title }}.TimesRan = 0;
-			console.log({{ page.title }}.TimesRan);
+			//console.log({{ page.title }}.TimesRan);
 		}
 		if({% unless page.times %}!{% endunless %}{{ page.title }}.TimesRan{% if page.times %} < {{ page.times }}{% endif %}) {
 			{{ page.title }}.TimesRan++;
-			  console.log({{ page.title }}.TimesRan);
+			  //console.log({{ page.title }}.TimesRan);
 			{{ page.title }}.Main();
 
 		} else {
