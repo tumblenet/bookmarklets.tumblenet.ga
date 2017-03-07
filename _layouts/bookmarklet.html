@@ -15,11 +15,11 @@ var tn = {
 
 	{{ page.title }}: function() {
 		if (window.tn{{ page.title }}TimesRan === undefined) {
-			window.tn{{ page.title }}TimesRan = 0;
-			console.log(window.tn{{ page.title }}TimesRan);
+			{{ page.title }}.TimesRan = 0;
+			console.log({{ page.title }}.TimesRan);
 		}
-		if({% unless page.times %}!{% endunless %}window.tn{{ page.title }}TimesRan{% if page.times %} < {{ page.times }}{% endif %}) {
-			{% if page.times %}window.tn{{ page.title }}TimesRan++;{% endif %}
+		if({% unless page.times %}!{% endunless %}{{ page.title }}.TimesRan{% if page.times %} < {{ page.times }}{% endif %}) {
+			{% if page.times %}{{ page.title }}.TimesRan++;{% endif %}
 			  console.log(window.tn{{ page.title }}TimesRan);
 			{{ page.title }}.Main();
 
