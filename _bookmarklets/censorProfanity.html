@@ -7,10 +7,10 @@ times: 1
 Main: function() {
   if (window.isProfanity === undefined || window.isProfanity.fn.jquery < v) {
     var done = false;
-    /*var scriptIsProfanity = document.createElement("script");*/
+    /*var scriptIsProfanity = document.createElement("script");
     scriptIsProfanity.src = "https://github.com/vandie/isProfanity/raw/master/isProfanity.js";
     var isProfanity = require("https://github.com/vandie/isProfanity/raw/master/isProfanity.js");
-    /*scriptIsProfanity.onload = scriptIsProfanity.onreadystatechange = function(){
+    scriptIsProfanity.onload = scriptIsProfanity.onreadystatechange = function(){
       if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
         done = true;
         this.LookThroughWords();
